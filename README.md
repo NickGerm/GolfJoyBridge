@@ -197,7 +197,6 @@ src/GolfJoyBridge.App    Windows UI: tray icon, settings window, camera windows
 tests/                      automated logic tests (no hardware needed)
 ```
 
-Pull requests welcome — see [License](#license) for the terms contributions are released under.
 
 ---
 

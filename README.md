@@ -1,8 +1,8 @@
 # GolfJoyBridge
 
-Connects a **Spica 3 launch monitor** to golf simulators that support the **GSPro Open Connect API**
+Connects a **GolfJoy launch monitor** to golf simulators that support the **GSPro Open Connect API** Only tested on the Spica 3
 — GSPro, Muni Golf Sim, OpenGolfSim, ShotForge, and others. Works over a network cable or
-Wi-Fi. Also shows the unit's swing-camera video on screen after every shot.
+Wi-Fi. Also shows the unit's impact-camera video on screen after every shot.
 
 > **Unofficial project.** Not made by or affiliated with the launch monitor's manufacturer, or with
 > GSPro. Use it at your own risk. See [Disclaimer](#disclaimer) below.

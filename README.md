@@ -81,15 +81,13 @@ Actions workflow (`.github/workflows/build.yml`) runs the same tests and builds 
 
 ### Wired (the default)
 
-Give your PC's network adapter a fixed IP address on the same network as the unit:
-
-- IP address: `192.168.147.2`
-- Subnet mask: `255.255.255.0`
-
-(The unit itself is always `192.168.147.147` when wired — nothing to configure there.) Plug in the
-cable and run the program; it should connect within a few seconds.
+Follow the manufacturer's instructions for a hardwired ethernet connection. If your monitor
+Connects to GSPro or the Golfjoy app on your pc it is configured correctly for this connector.
 
 ### Wireless
+
+The wireless connector allows for laptops without dual Nic cards to be used, and also easier switching 
+Between right and left handed players. 
 
 1. Connect the unit to your Wi-Fi using the manufacturer's phone app, if you haven't already.
 2. On your router, give the unit a **reserved / static IP address** (sometimes called a "DHCP

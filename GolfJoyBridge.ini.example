@@ -1,0 +1,90 @@
+; GolfJoyBridge settings
+; Edit this file, save it, then restart the program (tray icon > Restart).
+; Lines starting with ; are comments. Paths may be absolute or relative to the program folder.
+
+[Unit]
+; Path to the launch monitor's GRS.dll (copy it from the official app's install folder).
+DllPath = GRS.dll
+; IP address of the unit. Hard-wired Spica 3 units use 192.168.147.147.
+; Your PC's network adapter must be on the same subnet (for example 192.168.147.2, mask 255.255.255.0).
+UnitIp = 192.168.147.147
+; Folder the DLL may write its own logs/images to. Leave blank to not set one.
+; If no camera images show up, make sure this is NOT blank.
+SdkLogFolder = sdklog
+; Hand to use at start-up until the sim says otherwise: right, left or none (leave the unit as it is).
+DefaultHand = right
+; How this PC reaches the unit: wired or wireless. Change this with the Settings window (tray icon) for a clean restart.
+ConnectionMode = wired
+; Only used when ConnectionMode = wireless: the unit's own IP address on your Wi-Fi network.
+; Give the unit a reserved/static address on your router so this does not change. Required for wireless.
+WirelessUnitIp = 
+
+[Sim]
+; Open Connect (GSPro API v1) server. GSPro, Muni, OpenGolfSim, ShotForge etc. use 127.0.0.1 port 921.
+Host = 127.0.0.1
+Port = 921
+; Name this program reports to the sim.
+DeviceId = GolfJoyBridge
+; Seconds between "still alive" messages to the sim.
+HeartbeatSeconds = 5
+; Seconds to wait before retrying when the sim is not running or the connection drops.
+ReconnectSeconds = 3
+; After a shot, how long to wait for club data before sending the ball data on its own (milliseconds).
+ClubWaitMs = 1500
+; Let the sim switch the unit between putting and full-swing mode (true/false).
+AutoSwitchClub = true
+; Let the sim switch the unit between right and left handed (true/false).
+AutoSwitchHand = true
+; Club numbers sent to the unit. 45 = putter. 1 = driver. Any other number = iron.
+PutterClub = 45
+DriverClub = 1
+IronClub = 10
+; Send club speed / path / attack angle to the sim on full swings (true/false).
+SendClubData = true
+; If shots go left when they should go right, flip these.
+; InvertDirection flips launch direction (and club path / face). InvertSideSpin flips sidespin and spin axis.
+InvertDirection = false
+InvertSideSpin = false
+
+[Camera]
+; What to do with the shot camera pictures: off, loop or popup.
+;   loop  = one small always-on-top window that keeps replaying the latest shot (never takes focus).
+;   popup = after the shot, wait PopupDelaySeconds, show the shot PopupRepeats times, then close.
+Mode = loop
+; Playback speed in frames per second. A shot is about 25 frames, so 12 is about 2 seconds, slow motion.
+PlaybackFps = 12
+; Brightness curve. 1.0 = original (dark). Smaller = brighter. 0.6 is a good start.
+Gamma = 0.6
+; Which monitor to use: 0 = primary, 1 = first monitor, 2 = second, ...
+Monitor = 0
+
+; ---- loop window ----
+; X and Y are pixels from the top-left of the chosen monitor. -1 = bottom-right corner.
+LoopX = -1
+LoopY = -1
+LoopWidth = 560
+LoopHeight = 320
+; true = mouse clicks pass through the window to the sim underneath.
+LoopClickThrough = false
+
+; ---- popup window ----
+; Seconds after the camera pictures arrive before the popup opens.
+PopupDelaySeconds = 2
+; How many times the shot plays before the popup closes.
+PopupRepeats = 3
+; Size in pixels. 0 = automatic (half the monitor width).
+PopupWidth = 0
+PopupHeight = 0
+; Position in pixels from the top-left of the monitor. -1 = centered.
+PopupX = -1
+PopupY = -1
+; true = the popup takes keyboard focus while showing, then gives it back to the sim when it closes.
+; false = the popup shows on top without taking focus (nothing to give back).
+PopupTakeFocus = false
+; Click on the popup to close it early.
+PopupClickToClose = true
+
+[Saving]
+; Save every shot's camera frames as PNG files (true/false).
+SaveFrames = false
+SaveFolder = shots

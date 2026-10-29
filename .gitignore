@@ -1,0 +1,10 @@
+bin/
+obj/
+publish/
+logs/
+sdklog/
+shots/
+*.user
+.vs/
+GRS.dll
+GolfJoyBridge.ini
